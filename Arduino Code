@@ -1,0 +1,23 @@
+/*
+Adafruit Arduino - Chulmin Seong. DC Motor Demo.
+*/
+
+int motorPin = 3; //defines the digital output as this pin #
+
+void setup() //initialize all variables
+{
+    pinMode(motorPin, OUTPUT); //
+    // Serial.begin(9600);
+    // while (!Serial);
+    Serial.println("Speed 0 to 255");
+}
+
+void loop() //start the loop sequence
+{
+    analogWrite(motorPin, 255); //runs the motor at a speed of 255 rpm
+    delay(1000); // keeps the motor at that speed for 1000 microseconds (1 second)
+    //analogWrite(motorPin, 255); //runs the motor at a speed of
+    //delay(1000); // keeps the motor at that speed for 1000 microseconds (1 second)
+    analogWrite(motorPin, 0); // runs the motor at 0 rpm (turns it "off")
+    exit(0); //end the loop; otherwise this goes on forever
+}
